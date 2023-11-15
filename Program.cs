@@ -13,8 +13,7 @@
             float floatTest = 0;
             double doubleTest = 0;
             ulong longTest = 0;
-            ushort shortTest = 0;
-
+            short shortTest = 0;
 
             Console.WriteLine("Signed data type ranges");
             Console.WriteLine("short: " + short.MinValue + " to " + short.MaxValue);
@@ -30,8 +29,20 @@
             Console.WriteLine("long: " + ulong.MinValue + " to " + ulong.MaxValue);
             Console.WriteLine();
 
+            Console.Write("Insert integer: ");
+            intTest = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Insert Short: ");
+            shortTest = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Hello, World!!");
+            if (intTest >= 100 && intTest <= 200 || shortTest > 5)
+            {
+                Console.WriteLine("Hello, World!!");
+            }
+            else if (intTest >= 300 && intTest <= 400)
+            {
+                Console.WriteLine("Expression was false");
+            }
+
             Console.ReadLine();
         }
     }
