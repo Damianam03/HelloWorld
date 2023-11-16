@@ -60,6 +60,7 @@ namespace HelloWorld
                     Console.WriteLine("The area of your circle is " + Math.Pow(Convert.ToDouble(circle), 2) * Math.PI);
                 }
                 else if (keyPressed.Key == ConsoleKey.D4)
+                {
                     Console.Write("Insert width: ");
                     triangleWidh = Convert.ToDecimal(Console.ReadLine());
                     Console.Write("Insert height: ");
