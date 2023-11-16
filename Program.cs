@@ -10,18 +10,11 @@ namespace HelloWorld
             //example: Calculate unsigned short range (2 ^ 16) - 1 = 65535 -> ranges from 0 to 65535
             //example: Calculate signed short range - negative: (2 ^ 16) / 2 = 32768 -> ranges from -32768 to -1
             //                                        positive: ((2 ^ 16) / 2) - 1 = 32767 -> ranges from 0 to 32767
-            int intTest = 0;
-            int menuItemPicker = 0;
-            int square = 0;
-            int circle = 0;
-            int triangleHeight = 0;
-            int triangleWidh = 0;
-            decimal decimalTest = 0;
-            float floatTest = 0;
-            double doubleTest = 0;
-            ulong longTest = 0;
-            short shortTest = 0;
-            ConsoleKeyInfo consoleKeyInfo = new ConsoleKeyInfo();
+            decimal square = 0;
+            decimal circle = 0;
+            decimal triangleHeight = 0;
+            decimal triangleWidh = 0;
+            ConsoleKeyInfo keyPressed = new ConsoleKeyInfo();
             bool repeatProgram = false;
 
             while (!repeatProgram)
@@ -32,12 +25,12 @@ namespace HelloWorld
                 Console.WriteLine("4. Calculate triangle");
                 Console.WriteLine("\nPress ESC to close application");
 
-                consoleKeyInfo = Console.ReadKey();
+                keyPressed = Console.ReadKey();
                 //menuItemPicker = Convert.ToInt32(Console.ReadLine());
 
                 Console.Clear();
 
-                if (consoleKeyInfo.Key == ConsoleKey.D1)
+                if (keyPressed.Key == ConsoleKey.D1)
                 {
                     Console.WriteLine("Signed data type ranges");
                     Console.WriteLine("short: " + short.MinValue + " to " + short.MaxValue);
@@ -52,14 +45,29 @@ namespace HelloWorld
                     Console.WriteLine("integer: " + uint.MinValue + " to " + uint.MaxValue);
                     Console.WriteLine("long: " + ulong.MinValue + " to " + ulong.MaxValue);
                 }
-                else if (consoleKeyInfo.Key == ConsoleKey.D2)
+                else if (keyPressed.Key == ConsoleKey.D2)
                 {
                     Console.Write("Insert length: ");
-                    square = Convert.ToInt32(Console.ReadLine());
+                    square = Convert.ToDecimal(Console.ReadLine());
 
                     Console.WriteLine("The area of your square is " + square * 2);
                 }
-                else if (consoleKeyInfo.Key == ConsoleKey.Escape)
+                else if (keyPressed.Key == ConsoleKey.D3)
+                {
+                    Console.Write("Insert radius: ");
+                    circle = Convert.ToDecimal(Console.ReadLine());
+
+                    Console.WriteLine("The area of your circle is " + Math.Pow(Convert.ToDouble(circle), 2) * Math.PI);
+                }
+                else if (keyPressed.Key == ConsoleKey.D4)
+                    Console.Write("Insert width: ");
+                    triangleWidh = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("Insert height: ");
+                    triangleHeight = Convert.ToDecimal(Console.ReadLine());
+
+                    Console.WriteLine("The area of your triangle is " + ((triangleHeight * triangleWidh) / 2));
+                }
+                else if (keyPressed.Key == ConsoleKey.Escape)
                 {
                     repeatProgram = true;
                 }
