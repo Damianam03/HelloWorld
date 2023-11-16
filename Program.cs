@@ -1,4 +1,6 @@
-﻿namespace HelloWorld
+﻿using System.Xml.Schema;
+
+namespace HelloWorld
 {
     internal class Program
     {
@@ -49,14 +51,21 @@
                     Console.WriteLine("short: " + ushort.MinValue + " to " + ushort.MaxValue);
                     Console.WriteLine("integer: " + uint.MinValue + " to " + uint.MaxValue);
                     Console.WriteLine("long: " + ulong.MinValue + " to " + ulong.MaxValue);
-                    Console.WriteLine("\nPress any key to return to main menu boom");
-                    Console.ReadKey();
+                }
+                else if (consoleKeyInfo.Key == ConsoleKey.D2)
+                {
+                    Console.Write("Insert length: ");
+                    square = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("The area of your square is " + square * 2);
                 }
                 else if (consoleKeyInfo.Key == ConsoleKey.Escape)
                 {
                     repeatProgram = true;
                 }
 
+                Console.WriteLine("\nPress any key to return to main menu boom");
+                Console.ReadKey();
                 Console.Clear();
             }
             //Console.Write("Insert integer: ");
@@ -72,9 +81,6 @@
             //{
             //    Console.WriteLine("Expression was false");
             //} 
-
-
-
         }
     }
 }
